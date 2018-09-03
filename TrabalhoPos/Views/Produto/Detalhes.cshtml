@@ -1,0 +1,39 @@
+﻿@model TrabalhoPos.Models.Produto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhes</title>
+</head>
+<body>
+    @using (Html.BeginForm("Update", "Produto", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.DisplayNameFor(m => m.ProdutoID)
+            @Html.TextBoxFor(m => m.ProdutoID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ProdutoID)
+        </div>
+
+        <div class="form-group">
+            @Html.DisplayNameFor(m => m.Nome)
+            @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Nome)
+        </div>
+
+        <div class="form-group">
+            @Html.DisplayNameFor(m => m.Preco)
+            @Html.TextBoxFor(m => m.Preco, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Preco)
+        </div>
+
+
+        <button class="btn btn-primary">Comprar</button>
+    }
+</body>
+</html>
